@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+}
+
+div#background {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../images/background-img.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:top;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1.title {
+    font-size: 3rem;
+    margin: auto;
+}
+
+p.about-game {
+    max-width: 635px;
+    margin: 10px auto;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+fieldset,input {
+    border: none;
+}
+
+input {
+    outline: none;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+}
+
+button {
+    width: 8rem;
+    font-size: 1rem;
+    padding: 12px 15px;
+    border-radius: 20px;
+    border: 1px solid black;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 600;
+}
