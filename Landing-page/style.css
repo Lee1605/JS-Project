@@ -46,4 +46,11 @@ button {
     background-color: transparent;
     cursor: pointer;
     font-weight: 600;
+    margin-top: 10px;
+}
+
+button:hover {
+    margin-top: -1px;
+    background-color: aqua;
+    box-shadow: 2px 2px black;
 }
