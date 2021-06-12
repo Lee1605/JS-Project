@@ -1,0 +1,58 @@
+body{
+    margin: 0;
+    padding-top: 0;
+    padding-left: 50%;
+    background-color: rgb(121, 173, 197);
+    width: 100vw;
+    height: 100vh;
+}
+
+h1,p{
+    font-family: Cursive;
+    font-size: 1000%;
+    text-align:justify;
+    margin: 0;
+    padding: 0;
+    color: khaki;
+}
+
+.images{
+    border: 2px solid lightpink;
+    border-radius: 3.33%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+} 
+
+.image{
+    margin: 2%;
+    padding: 0;
+    border: 2px solid red;
+    width: 20.5%;
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+    border-radius: 10%;
+    right: 0;
+    top: 0;
+}
+
+img{
+    width: 100%;
+    border-radius: 10%;
+    transition: all 0.3s, ease-in-out 0s;
+}
+
+.image:hover .img_{
+    transform: scale(1.1) rotate(2deg);
+}
+
+#img_1{
+    position:absolute;
+    align-items: center;
+}
+
+
+
+
+
