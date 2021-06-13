@@ -5,7 +5,7 @@ body {
 div#background {
     width: 100vw;
     height: 100vh;
-    background-image: url('../images/background-img.jpeg');
+    background-image: url('images/background-img.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position:top;
