@@ -9,7 +9,7 @@ body{
 
 h1,p{
     font-family: Cursive;
-    font-size: 1000%;
+    font-size: 500%;
     text-align:justify;
     margin: 0;
     padding: 0;
@@ -20,6 +20,7 @@ h1,p{
     border: 2px solid lightpink;
     border-radius: 3.33%;
     display: flex;
+    /* flex-direction: column; */
     flex-wrap: wrap;
     width: 30%;
 } 
@@ -28,31 +29,23 @@ h1,p{
     margin: 2%;
     padding: 0;
     border: 2px solid red;
-    width: 20.5%;
-    display: flex;
-    flex-wrap: nowrap;
+    width: 20%;
     position: relative;
     border-radius: 10%;
-    right: 0;
-    top: 0;
 }
 
 img{
     width: 100%;
     border-radius: 10%;
-    transition: all 0.3s, ease-in-out 0s;
 }
 
-.image:hover .img_{
+.image:hover .img_1{
     transform: scale(1.1) rotate(2deg);
 }
 
-#img_1{
-    position:absolute;
+.img_1{
+    position: absolute;
     align-items: center;
+    bottom: 0;
 }
-
-
-
-
 
