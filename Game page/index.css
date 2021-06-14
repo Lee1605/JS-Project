@@ -37,6 +37,10 @@ img{
     border-radius: 10%;
 }
 
+#img_2{
+    z-index: 0;
+}
+
 /* .image:hover .img_1{
     transform: scale(1.1) rotate(2deg);
 } */
