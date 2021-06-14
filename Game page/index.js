@@ -18,3 +18,20 @@ for(let i=0; i<image1.length;i++){
     })
 }
 
+
+for(let i=0; i<image1.length;i++){
+    image1[i].addEventListener('mouseover',(event)=>{
+        if(image1[i].style.zIndex == '-1'){
+            image1[i].style.transform = '';
+        }
+        else{
+            image1[i].style.transform = 'scale(1.1) rotate(2deg)'; 
+        }
+    })
+}
+
+for(let i=0; i<image1.length;i++){
+    image1[i].addEventListener('mouseleave',(event)=>{
+        image1[i].style.transform = ''; 
+    })
+}

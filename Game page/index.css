@@ -3,7 +3,6 @@ body{
     padding-top: 0;
     padding-left: 50%;
     background-color: rgb(121, 173, 197);
-    width: 100vw;
     height: 100vh;
 }
 
@@ -38,9 +37,9 @@ img{
     border-radius: 10%;
 }
 
-.image:hover .img_1{
+/* .image:hover .img_1{
     transform: scale(1.1) rotate(2deg);
-}
+} */
 
 .img_1{
     position: absolute;
