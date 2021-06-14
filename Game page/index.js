@@ -3,7 +3,7 @@ let image2 = document.getElementsByClassName("img_2");
 
 
 
-
+let storedNum = [];
 for(let i=0; i<image1.length;i++){
     image1[i].addEventListener('click',(event)=>{
         image1[i].style.zIndex = '-1';
