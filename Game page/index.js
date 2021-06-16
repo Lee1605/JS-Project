@@ -18,3 +18,5 @@ for(let i=0; i<image1.length;i++){
     })
 }
 
+
+
