@@ -33,13 +33,5 @@ for(let i=0; i<image1.length;i++){
     })
 }
 
-<<<<<<< HEAD
-=======
-for(let i=0; i<image1.length;i++){
-    image1[i].addEventListener('mouseleave',(event)=>{
-        image1[i].style.transform = ''; 
-    })
-}
->>>>>>> 1f22de0deb1bc91cd9442d81ac99c37ce2b188f9
 
 
