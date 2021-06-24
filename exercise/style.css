@@ -41,6 +41,11 @@ div.image {
     margin: 10px;
 }
 
+div.img1:hover {
+    transform: scale(1.1) rotate(3deg);
+}
+
+
 div.img1 {
     width: 120px;
     height: 170px;
