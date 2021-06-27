@@ -76,12 +76,15 @@ for(let i = 0;i<memory.length; i++) {
     })
 }
 
-// let arr5 = [1,2,3,4,5];
-// let sum1 = 0;
-// for (let i = 0;i<arr5.length;i++) {
-//     sum1 = sum1+arr5[i];
-// }
-// console.log(sum1);
+(function shuffle() {
+    memory.forEach(card=> {
+        let random_pos = Math.floor(Math.random()*12);
+        card.style.order = random_pos;
+    })
+}) ();
+    
+
+
 
 
 
