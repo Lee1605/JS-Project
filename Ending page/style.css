@@ -97,6 +97,12 @@ div.share {
   margin-top: 10px;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+  
+}
+
 @media only screen and (max-width:1024px) {
   div.share {
     width: 70%;
