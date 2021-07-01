@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
@@ -15,19 +16,19 @@
                 Under these 12 cards hides 6 pairs of ocean animals .
                 Find them !
             </p>
-            <form method="GET" action="../exercise/index.html">
+            <form method="GET" action="../Game page/index.html">
                 <fieldset>
                     <label for="Full-name">Full name :</label>
-                    <input type="text" name="Full-name">
+                    <input type="text" name="name" id="playerName" required>
                 </fieldset>
                 <fieldset>
                     <label for="Email">Email :</label>
-                    <input type="email" name="Email">
+                    <input type="email" name="Email" id="playerEmail" required>
                 </fieldset>
-                <button class="start" type="submit">LET'S PLAY</button>
+            <button id="myButton">Let's Play</button>
             </form>
         </div>
     </div>
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="scripts.js"></script>
 </body>
 </html>
