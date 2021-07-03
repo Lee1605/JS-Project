@@ -139,3 +139,19 @@ button {
     }
 }
 
+#stopper-contain {
+    float: right;
+  }
+  
+  #stopper {
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 50px;
+    display: flex;
+    text-align: center;
+    font-size: 50px;
+    width: 150px;
+    height: 150px;
+    border: 2px solid black;
+    border-radius: 50%;
+  }
