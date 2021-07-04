@@ -20,6 +20,7 @@ let array = [];
 let x;
 let y;
 let has = false;
+let oneDone = false;
 let finish = document.getElementById('finish');
 
 // DOM integration
@@ -69,10 +70,17 @@ for(let i = 0;i<memory.length; i++) {
             if(arr[0]!=arr[1]){
                 unFlip(x);
                 unFlip(y);
+                oneDone = false;
             }
             else{
                 array.push(arr[0]);
-                sum = sum + 5;
+                if(oneDone){
+                    sum = sum + 10;
+                }
+                else{
+                    sum = sum + 5;
+                    oneDone = true;
+                }
                 points.innerHTML = 'your points : ' + sum;
                 if(array.length===6) {
                     body.style.backgroundColor = 'rgba(0,0,0,0.6)';
