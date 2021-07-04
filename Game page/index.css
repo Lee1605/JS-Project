@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background-color: lightblue;
 }
 
 div#pop {
@@ -50,7 +51,7 @@ div.img1 {
     width: 120px;
     height: 170px;
     position: relative;
-    background-color: blue;
+    background-color: steelblue;
 }
 
 div.img2 {

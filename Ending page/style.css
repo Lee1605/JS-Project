@@ -55,7 +55,7 @@ td {
   width: 51%;
 }
 
-.user-player {
+#playerNameAccToTime ,#playerTime,#playerName,#playerPoints{
   background-color:skyblue;
   color: black;
   font-weight: 600;
