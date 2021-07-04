@@ -102,7 +102,7 @@ for(let i = 0;i<memory.length; i++) {
                             sum = sum + 5;
                             oneDone = true; //  the same images so it is true
                         }
-                        points.innerHTML = 'your points : ' + sum;
+                        points.innerHTML = 'Your points : ' + sum;
                         //The game is over.
                         if(array.length===6) {
                             body.style.backgroundColor = 'rgba(0,0,0,0.6)';
