@@ -4,7 +4,7 @@ let Email = param.get('Email');
 const score = document.getElementById('score');
 score.innerHTML = 'Hello ' + FullName;
 
-let has_flipped = false;
+let has_flipped = false; // determine which carde is flipped, when false the player flipped the first card, when true the player flipped the second card,when the second card is flipped we give it the value false and repeate. 
 const memory = document.querySelectorAll('.image')
 const cards = document.querySelectorAll('.img1');
 const body = document.getElementById('body');
@@ -15,12 +15,10 @@ const again = document.getElementById('again');
 const scores = document.getElementById('scores');
 let sum = 0;
 points.innerHTML = 'Your points : ' + 0;
-let arr = [];
-let array = [];
-let x;
-let y;
-let has = false;
-let oneDone = false;
+let arr = []; //contains the two cards we are comparing
+let array = []; //Contains the class attribute of flipped cards.
+let x,y; // The index of the card the player has clicked.
+let oneDone = false; // true if the player flipped two identical images, false if the opposite
 let finish = document.getElementById('finish');
 
 // DOM integration
@@ -50,7 +48,7 @@ function stopper() {
             stopperDisplay.innerHTML = minutes + ":" + "0" + seconds;
         }
         else{
-            topperDisplay.innerHTML = minutes + ":" + seconds;
+            stopperDisplay.innerHTML = minutes + ":" + seconds;
         }
     }
 }
@@ -58,53 +56,78 @@ window.setInterval(stopper, 1000);
 
 for(let i = 0;i<memory.length; i++) {
     memory[i].addEventListener('click',(event)=>{
-        if(!has_flipped) {
-            x=i;
-            has_flipped = true;
-            arr.push(flip(i));
+        //if the array contains the class attribute of a card the player just clicked stop the eventListener
+        if ( array.indexOf(memory[i].getAttribute('class'))>=0){
+            memory[i].preventDefault;
+            memory[i].stopPropagation;
         }
-        else {
-            y=i;
-            has_flipped = false;
-            arr.push(flip(i));
-            if(arr[0]!=arr[1]){
-                unFlip(x);
-                unFlip(y);
-                oneDone = false;
+        else{
+            if(!has_flipped) {
+                //flipped the first card
+                //save the index on x
+                //save the class attribute temporarily on arr
+                x=i;
+                has_flipped = true;
+                arr.push(flip(i));
             }
-            else{
-                array.push(arr[0]);
-                if(oneDone){
-                    sum = sum + 10;
+            else {
+                //save the index on y
+                y=i;
+                //restart the has_flipped variable.
+                has_flipped = false;
+                //flipped the second card
+                //save the class attribute temporarily on arr
+                arr.push(flip(i));
+                //comparing the two cards saved on arr with the class attribute
+                //if not the same attribute ==> not the same image then unflip the two cards
+                if(arr[0]!=arr[1]){
+                    unFlip(x);
+                    unFlip(y);
+                    oneDone = false; // not the same images so it is false
                 }
                 else{
-                    sum = sum + 5;
-                    oneDone = true;
+                    array.push(arr[0]);//The player has flipped the same images so save the class attribute into array
+                    //The player has flipped the same cards on the last round so give him 10 points
+                    if(oneDone){
+                        sum = sum + 10;
+                    }
+                    //The player hasn't flipped the same cards on the last round so give him 5 points 
+                    //and change oneDone to true
+                    else{
+                        sum = sum + 5;
+                        oneDone = true; //  the same images so it is true
+                    }
+                    points.innerHTML = 'your points : ' + sum;
+                    //The game is over.
+                    if(array.length===6) {
+                        body.style.backgroundColor = 'rgba(0,0,0,0.6)';
+                        after.style.opacity = '0.5';
+                        finish.innerHTML = 'Well Done ' + FullName;
+                        pop.style.display = 'initial';
+                        //Go to scores page 
+                        scores.childNodes[0].href="../Ending page/index.html?name=" + FullName + "&Email=" + Email + "&points=" + sum + "&time=" + ( minutes + seconds/60);
+                    }
                 }
-                points.innerHTML = 'your points : ' + sum;
-                if(array.length===6) {
-                    body.style.backgroundColor = 'rgba(0,0,0,0.6)';
-                    after.style.opacity = '0.5';
-                    finish.innerHTML = 'Well Done ' + FullName;
-                    pop.style.display = 'initial';
-                    scores.childNodes[0].href="../Ending page/index.html?name=" + FullName + "&Email=" + Email + "&points=" + sum + "&time=" + ( minutes + seconds/60);
-                }
-            }
-            arr = [];
-        } 
+                //restart arr
+                arr = [];
+            } 
+        }
     });
     has_flipped = false;
 }
 
+//The function flip the card and return the class attribute.
 function flip(j){
     cards[j].classList.add('flip');
     return memory[j].getAttribute('class');
 }
 
+//The function unflip the card after 0.3s
 function unFlip(j){
     setTimeout(function(){cards[j].classList.remove('flip')},300);       
 }
 
+//The function shuffles the cards.
 (function shuffle() {
     memory.forEach(card=> {
         let random_pos = Math.floor(Math.random()*12);
