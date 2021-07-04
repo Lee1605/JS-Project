@@ -73,43 +73,49 @@ for(let i = 0;i<memory.length; i++) {
             else {
                 //save the index on y
                 y=i;
-                //restart the has_flipped variable.
-                has_flipped = false;
-                //flipped the second card
-                //save the class attribute temporarily on arr
-                arr.push(flip(i));
-                //comparing the two cards saved on arr with the class attribute
-                //if not the same attribute ==> not the same image then unflip the two cards
-                if(arr[0]!=arr[1]){
-                    unFlip(x);
-                    unFlip(y);
-                    oneDone = false; // not the same images so it is false
+                if(x==y){
+                    memory[i].preventDefault;
+                    memory[i].stopPropagation;
                 }
                 else{
-                    array.push(arr[0]);//The player has flipped the same images so save the class attribute into array
-                    //The player has flipped the same cards on the last round so give him 10 points
-                    if(oneDone){
-                        sum = sum + 10;
+                    //restart the has_flipped variable.
+                    has_flipped = false;
+                    //flipped the second card
+                    //save the class attribute temporarily on arr
+                    arr.push(flip(i));
+                    //comparing the two cards saved on arr with the class attribute
+                    //if not the same attribute ==> not the same image then unflip the two cards
+                    if(arr[0]!=arr[1]){
+                        unFlip(x);
+                        unFlip(y);
+                        oneDone = false; // not the same images so it is false
                     }
-                    //The player hasn't flipped the same cards on the last round so give him 5 points 
-                    //and change oneDone to true
                     else{
-                        sum = sum + 5;
-                        oneDone = true; //  the same images so it is true
+                        array.push(arr[0]);//The player has flipped the same images so save the class attribute into array
+                        //The player has flipped the same cards on the last round so give him 10 points
+                    if(oneDone){
+                            sum = sum + 10;
+                        }
+                        //The player hasn't flipped the same cards on the last round so give him 5 points 
+                        //and change oneDone to true
+                        else{
+                            sum = sum + 5;
+                            oneDone = true; //  the same images so it is true
+                        }
+                        points.innerHTML = 'your points : ' + sum;
+                        //The game is over.
+                        if(array.length===6) {
+                            body.style.backgroundColor = 'rgba(0,0,0,0.6)';
+                            after.style.opacity = '0.5';
+                            finish.innerHTML = 'Well Done ' + FullName;
+                            pop.style.display = 'initial';
+                            //Go to scores page 
+                            scores.childNodes[0].href="../Ending page/index.html?name=" + FullName + "&Email=" + Email + "&points=" + sum + "&time=" + ( minutes + seconds/60);
+                        }
                     }
-                    points.innerHTML = 'your points : ' + sum;
-                    //The game is over.
-                    if(array.length===6) {
-                        body.style.backgroundColor = 'rgba(0,0,0,0.6)';
-                        after.style.opacity = '0.5';
-                        finish.innerHTML = 'Well Done ' + FullName;
-                        pop.style.display = 'initial';
-                        //Go to scores page 
-                        scores.childNodes[0].href="../Ending page/index.html?name=" + FullName + "&Email=" + Email + "&points=" + sum + "&time=" + ( minutes + seconds/60);
-                    }
+                    //restart arr
+                    arr = [];
                 }
-                //restart arr
-                arr = [];
             } 
         }
     });
