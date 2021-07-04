@@ -1,6 +1,6 @@
-let param = new URLSearchParams( window.location.search );
-let FullName = param.get('name');
-let Email = param.get('Email');
+let param = new URLSearchParams( window.location.search );//Get the parameters on the url
+let FullName = param.get('name');//Get the value of the parameter name
+let Email = param.get('Email');//Get the value of the parameter Email
 const score = document.getElementById('score');
 score.innerHTML = 'Hello ' + FullName;
 
