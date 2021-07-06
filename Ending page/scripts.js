@@ -7,7 +7,10 @@ let param = new URLSearchParams( window.location.search );//Get the parameters o
 playerName.innerHTML = param.get('name');//Get the value of the parameter name and put it in the points table 
 playerNameAccToTime.innerHTML = param.get('name');//Get the value of the parameter name and put it in the time table 
 playerPoints.innerHTML = param.get('points');//Get the value of the parameter points and put it in the points table 
-playerTime.innerHTML = param.get('time') + " min";//Get the value of the parameter time and put it in the time table 
+playerTime.innerHTML = param.get('time') + " min";//Get the value of the parameter time and put it in the time table
+
+let whatsapp = document.getElementById('whatsapp');
+whatsapp.href = 'https://api.whatsapp.com/send?text=My Points' + param.get('points')+'My time'+param.get('time');
 
 // const tds = document.querySelectorAll('.td');
 // let arr = [];
