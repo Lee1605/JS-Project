@@ -35,7 +35,7 @@ for(let i= 1 ; i < table[0].rows.length-1; i++){
     x = targetedPerson;
     y = table[1].rows[i];
     if(x.innerText != y.innerText){
-        if(parseInt(x.lastElementChild.innerHTML) <= parseInt(y.lastElementChild.innerHTML)){
+        if(parseFloat(x.lastElementChild.innerHTML) <= parseFloat(y.lastElementChild.innerHTML)){
             exchange(x,y);
         }
     }
