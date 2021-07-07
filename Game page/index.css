@@ -140,6 +140,25 @@ button:hover {
     background-color: lightblue;
 }
 
+#stopper-contain {
+    position: absolute;
+    right: 20px;
+    top: 0;
+  }
+  
+  div#stopper-contain p#stopper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    width: 150px;
+    height: 150px;
+    border: 2px solid black;
+    border-radius: 50%;
+    margin: 0;
+    margin-left: 50px;
+  }
+
 @media only screen and (max-width:1024px) {
     div.img1, div.img2 {
         width: 50px;
@@ -161,31 +180,20 @@ button:hover {
 
     div#stopper-contain {
         position: absolute;
-        right: 20px;
+        right: 5px;
         top: 40px;
       }
 
-    p#stopper {
+    div#stopper-contain p#stopper {
         width: 80px;
         height: 80px;
         font-size: 2rem;
+        margin-left: 30px;
+    }
+
+    .watchbtn {
+        width: 4rem;
+        font-size: 0.8rem;
     }
 }
 
-#stopper-contain {
-    position: absolute;
-    right: 20px;
-    top: 0;
-  }
-  
-  #stopper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 50px;
-    width: 150px;
-    height: 150px;
-    border: 2px solid black;
-    border-radius: 50%;
-    margin: 0;
-  }

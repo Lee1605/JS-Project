@@ -20,6 +20,10 @@ let array = []; //Contains the class attribute of flipped cards.
 let x,y; // The index of the card the player has clicked.
 let oneDone = false; // true if the player flipped two identical images, false if the opposite
 let finish = document.getElementById('finish');
+let status = "started";
+let stsp = document.getElementById('startStop');
+let rst = document.getElementById('reset');
+
 
 // DOM integration
 stopperDisplay = document.getElementById("stopper");
@@ -52,7 +56,37 @@ function stopper() {
         }
     }
 }
-window.setInterval(stopper, 1000);
+let interval = window.setInterval(stopper, 1000);
+
+function startStop() {
+    if(status==="started") {
+        window.clearInterval(interval);
+        document.getElementById('startStop').innerHTML = 'Start';
+        status = 'stopped';
+    } else {
+        interval = window.setInterval(stopper,1000);
+        document.getElementById('startStop').innerHTML = 'Stop';
+        status = 'started';
+    }
+}
+
+stsp.addEventListener('click',(event)=>{
+    startStop();
+})
+
+function reset() {
+    window.clearInterval(interval);
+    seconds = 0;
+    minutes = 0;
+    stopperDisplay.innerHTML = '00:00';
+    stsp.innerHTML = 'Start';
+    status = 'stopped';
+}
+
+rst.addEventListener('click',(event)=>{
+    reset();
+})
+
 
 for(let i = 0;i<memory.length; i++) {
     memory[i].addEventListener('click',(event)=>{
