@@ -10,13 +10,13 @@ time = Number(time);
 playerName.innerHTML = param.get('name');//Get the value of the parameter name and put it in the points table 
 playerNameAccToTime.innerHTML = param.get('name');//Get the value of the parameter name and put it in the time table 
 playerPoints.innerHTML = param.get('points');//Get the value of the parameter points and put it in the points table 
-playerTime.innerHTML = time.toFixed(1) + " min";//Get the value of the parameter time and put it in the time table
+playerTime.innerHTML = time.toFixed(2) + " min";//Get the value of the parameter time and put it in the time table
 
 
 let whatsapp = document.getElementById('whatsapp');
-whatsapp.href = 'https://api.whatsapp.com/send?text=I wanted to share with you my game result ! '+param.get('name')+' - '+param.get('Email')+', I got '+param.get('points')+' points in '+time.toFixed(1) +' minutes.';
+whatsapp.href = 'https://api.whatsapp.com/send?text=I wanted to share with you my game result ! '+param.get('name')+' - '+param.get('Email')+', I got '+param.get('points')+' points in '+time.toFixed(2) +' minutes.';
 let env = document.getElementById('env');
-env.href = "mailto:?subject=I wanted to share with you my game result !&body="+param.get('name')+' - '+param.get('Email')+', I got '+param.get('points')+' points in '+time.toFixed(1) +' minutes.';
+env.href = "mailto:?subject=I wanted to share with you my game result !&body="+param.get('name')+' - '+param.get('Email')+', I got '+param.get('points')+' points in '+time.toFixed(2) +' minutes.';
 
 let table = document.querySelectorAll('table');
 let rows = table.rows;
