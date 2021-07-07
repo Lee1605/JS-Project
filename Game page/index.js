@@ -141,4 +141,3 @@ function unFlip(j){
     })
 }) ();
 
-again.childNodes[0].href = "index.html?name=" + FullName + "&Email=" + Email; 
