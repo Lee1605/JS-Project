@@ -14,9 +14,9 @@ playerTime.innerHTML = time.toFixed(1) + " min";//Get the value of the parameter
 
 
 let whatsapp = document.getElementById('whatsapp');
-whatsapp.href = 'https://api.whatsapp.com/send?text=I wanted to share with you my game result ! '+param.get('name')+' - '+param.get('Email')+', I got '+param.get('points')+' points in '+param.get('time') +' minutes.';
+whatsapp.href = 'https://api.whatsapp.com/send?text=I wanted to share with you my game result ! '+param.get('name')+' - '+param.get('Email')+', I got '+param.get('points')+' points in '+time.toFixed(1) +' minutes.';
 let env = document.getElementById('env');
-env.href = "mailto:?subject=I wanted to share with you my game result !&body="+param.get('name')+' - '+param.get('Email')+', I got '+param.get('points')+' points in '+param.get('time') +' minutes.';
+env.href = "mailto:?subject=I wanted to share with you my game result !&body="+param.get('name')+' - '+param.get('Email')+', I got '+param.get('points')+' points in '+time.toFixed(1) +' minutes.';
 
 let table = document.querySelectorAll('table');
 let rows = table.rows;
