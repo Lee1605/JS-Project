@@ -31,11 +31,8 @@ for(let i= 1 ; i < table[0].rows.length-1; i++){
     }
 }
 
-// y = 4;
 targetedPerson = table[1].rows[4];  
-console.log(targetedPerson);
 for(let i= 1 ; i < table[0].rows.length-1; i++){
-    console.log(1);
     x = targetedPerson;
     y = table[1].rows[i];
     if(x.innerText != y.innerText){
