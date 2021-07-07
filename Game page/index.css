@@ -16,6 +16,15 @@ div#pop {
     background-color: white;
 }
 
+.popbtn {
+    text-decoration: none;
+    color: black;
+}
+
+.popbtn:hover {
+    border-bottom: 1px solid black;
+}
+
 div#container {
     display: flex;
     max-width:680px;
@@ -125,6 +134,10 @@ button {
   font-weight: 600;
   color: black;
   margin: 5px auto 0 auto;
+}
+
+button:hover {
+    background-color: lightblue;
 }
 
 @media only screen and (max-width:1024px) {
