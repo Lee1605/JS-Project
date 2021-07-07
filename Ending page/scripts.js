@@ -10,7 +10,7 @@ playerPoints.innerHTML = param.get('points');//Get the value of the parameter po
 playerTime.innerHTML = param.get('time') + " min";//Get the value of the parameter time and put it in the time table
 
 let whatsapp = document.getElementById('whatsapp');
-whatsapp.href = 'https://api.whatsapp.com/send?text=My Points' + param.get('points')+'My time'+param.get('time');
+whatsapp.href = 'https://api.whatsapp.com/send?text=index.html?name='+param.get('name')+'&Email='+param,get('Email')+'&points='+param.get('points')+'&time='+param.get('time');
 
 // const tds = document.querySelectorAll('.td');
 // let arr = [];
