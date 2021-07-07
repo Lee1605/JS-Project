@@ -61,11 +61,11 @@ let interval = window.setInterval(stopper, 1000);
 function startStop() {
     if(status==="started") {
         window.clearInterval(interval);
-        document.getElementById('startStop').innerHTML = 'Start';
+        stsp.innerHTML = 'Start';
         status = 'stopped';
     } else {
         interval = window.setInterval(stopper,1000);
-        document.getElementById('startStop').innerHTML = 'Stop';
+        stsp.innerHTML = 'Stop';
         status = 'started';
     }
 }
