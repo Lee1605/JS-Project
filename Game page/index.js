@@ -81,6 +81,17 @@ function reset() {
     stopperDisplay.innerHTML = '00:00';
     stsp.innerHTML = 'Start';
     status = 'stopped';
+    for (let i = 0; i < cards.length ; i++){
+        if(cards[i].classList.contains('flip')){
+            unFlip(i);
+        }
+    }
+    array = [];
+    arr = [];
+    oneDone = false;
+    has_flipped = false;
+    sum = 0;
+    points.innerHTML = 'Your points : ' + sum;
 }
 
 rst.addEventListener('click',(event)=>{
@@ -90,6 +101,7 @@ rst.addEventListener('click',(event)=>{
 
 for(let i = 0;i<memory.length; i++) {
     memory[i].addEventListener('click',(event)=>{
+        if(stopperDisplay.innerHTML != '00:00' & status != 'stopped'){
         //if the array contains the class attribute of a card the player just clicked stop the eventListener
         if ( array.indexOf(memory[i].getAttribute('class'))>=0){
             memory[i].preventDefault;
@@ -152,6 +164,7 @@ for(let i = 0;i<memory.length; i++) {
                 }
             } 
         }
+    }
     });
     has_flipped = false;
 }
